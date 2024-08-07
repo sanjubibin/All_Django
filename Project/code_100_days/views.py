@@ -12,8 +12,8 @@ class RedirectHome(View):
 
 class Index(View):
     def get(self, request):
-        return HttpResponse('100 days of code Home Page!!!!')
+        return render(request, 'htmls/100day_common.html', Dataa['Index']['for_render'])
     
 class Day1(View):
     def get(self, request):
-        return render(request, 'htmls/day1.html', Dataa['Day1']['for_render'])
+        return render(request, 'htmls/100day_common.html', Dataa['Day1']['for_render'])
