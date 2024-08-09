@@ -21,6 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('', include('code_100_days.urls')),
-
-    path('web3_app/', include('web3_app.urls'))
+    path('web3_app/', include('web3_app.urls')),
+    path('user/', include('users.urls'))
 ]

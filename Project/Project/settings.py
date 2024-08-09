@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'web3_app',
+    'code_100_days',
+    'users'
+
 ]
 
 MIDDLEWARE = [
@@ -59,7 +62,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            BASE_DIR / 'code_100_days' / 'templates'
+            BASE_DIR / 'code_100_days' / 'templates',
+            BASE_DIR / 'users' / 'templates'
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -75,14 +79,24 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Project.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'all_django',  # Replace with your database name
+        'USER': 'root',  # MySQL username
+        'PASSWORD': 'Zaq1@wsx',  # Password for the database
+        'HOST': 'localhost',  # MySQL host
+        'PORT': '3306',  # MySQL port
     }
 }
 
